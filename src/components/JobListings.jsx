@@ -13,7 +13,7 @@ const JobListings = ({isHome}) => {
             const fetchJobs = async () =>{
 
             try {
-                const res = await fetch("/api/jobs");
+                const res = await fetch("./../../public/jobs.json");
                 const data = await res.json();
     
                 setJobs(data);
