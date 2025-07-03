@@ -13,10 +13,10 @@ const JobListings = ({isHome}) => {
             const fetchJobs = async () =>{
 
             try {
-                const res = await fetch("./../../public/jobs.json");
+                const res = await fetch("/jobs.json");
                 const data = await res.json();
     
-                setJobs(data);
+                setJobs(data.jobs);
                 
             } catch (error) {
                 console.log("Error fetching jobs: ", error);                
