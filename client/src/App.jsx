@@ -10,13 +10,14 @@ import PaymentForm from "./pages/PaymentForm"
 import AddJobPage from "./pages/AddJobPage"
 import { toast } from "react-toastify"
 import EditJobPage from "./pages/EditJobPage"
+import { BASE_URL } from "../api"
 
 
 
 const App = () => {
 
   const deleteJob = async(id) => {
-    const res = await fetch(`/api/jobs/${id}`, {
+    const res = await fetch(`${BASE_URL}/jobs/${id}`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
     });

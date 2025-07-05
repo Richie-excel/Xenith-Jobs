@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { BASE_URL } from "../../api";
 
 const AddJobPage = () => {
 
@@ -33,7 +34,7 @@ const AddJobPage = () => {
             }
         }
 
-        const res = await fetch('api/jobs/add',{
+        const res = await fetch(`${BASE_URL}/jobs/add`,{
             method: "POST",
             headers:{
                 'Content-Type': 'application/json'

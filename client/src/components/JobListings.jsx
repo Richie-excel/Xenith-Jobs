@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react"
 import JobListing from "./JobListing"
+import { BASE_URL } from "../../api";
 import Loader from "./Loader";
 
 const JobListings = ({isHome}) => {
@@ -13,7 +14,7 @@ const JobListings = ({isHome}) => {
             const fetchJobs = async () =>{
 
             try {
-                const res = await fetch("/api/jobs");
+                const res = await fetch(`${BASE_URL}/jobs`);
                 const data = await res.json();
                 setJobs(Array.isArray(data) ? data : []);
                 

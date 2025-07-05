@@ -3,6 +3,7 @@ import {useState} from 'react'
 import { NavLink, useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
 import { toast } from 'react-toastify';
+import { BASE_URL } from '../../api';
 
 const JobDetailPage = ({deleteJob}) => {
     const {id} = useParams()
@@ -152,7 +153,7 @@ const JobDetailPage = ({deleteJob}) => {
 
 const JobLoader = async({params}) =>{ 
     try {
-        const res = await fetch(`/api/jobs/${params.id}`);
+        const res = await fetch(`${BASE_URL}/jobs/${params.id}`);
         const data = await res.json();
         return data;
     } catch (error) {

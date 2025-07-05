@@ -1,6 +1,7 @@
 import { useNavigate, useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { BASE_URL } from "../../api";
 
 const EditJobPage = () => {
     const navigate = useNavigate()
@@ -33,7 +34,7 @@ const EditJobPage = () => {
                 }
             }
     
-            const res = await fetch(`/api/jobs/${job.id}`,{
+            const res = await fetch(`${BASE_URL}/jobs/${job.id}`,{
                 method: "PUT",
                 headers:{
                     'Content-Type': 'application/json'
