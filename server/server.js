@@ -8,12 +8,15 @@ import { config } from 'dotenv';
 const app = express();
 config();
 const port = process.env.PORT || 8000;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 
 app.use(cors());
 app.use(express.json()); // built-in JSON body parsing
 
-const jobsFilePath = path.join('/tmp', 'jobs.json');
+const jobsFilePath = path.join(__dirname, 'jobs.json');
 
 // Utility: read jobs
 const readJobs = () => {
